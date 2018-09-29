@@ -1,16 +1,10 @@
+[package]
+name = "protocol-v5"
+version = "0.0.1"
+authors = ["STEAMROLLER"]
+license = "Apache-2.0 OR MIT"
+publish = false
+repository = 'https://github.com/steamroller-airmash/airmash-server'
 
-[profile.release]
-# Turn on nice backtraces even when in release mode
-debug = true
-#lto = true
-
-[workspace]
-members = [
-	"server",
-	"base",
-	"ctf",
-	"ffa",
-	"bounded-queue",
-	"special-map",
-	"protocol-v5"
-]
+[dependencies]
+airmash-protocol = { git="https://github.com/steamroller-airmash/airmash-protocol-rs" }
