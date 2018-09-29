@@ -1,10 +1,12 @@
 [package]
-name = "protocol-v5"
+name = "airmash-protocol-v5"
 version = "0.0.1"
 authors = ["STEAMROLLER"]
+readme = "README.md"
+description = "Protocol backend for version 5 of the AIRMASH protocol"
+keywords = ["protocol", "games"]
 license = "Apache-2.0 OR MIT"
-publish = false
 repository = 'https://github.com/steamroller-airmash/airmash-server'
 
 [dependencies]
-airmash-protocol = { git="https://github.com/steamroller-airmash/airmash-protocol-rs" }
+airmash-protocol = "0.2"
