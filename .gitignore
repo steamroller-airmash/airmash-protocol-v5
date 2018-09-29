@@ -3,3 +3,4 @@ build.bat
 .vscode/
 notes/logbot1.log
 target/
+Cargo.lock
