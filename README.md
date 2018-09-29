@@ -1,7 +1,7 @@
 
 # Airmash Protocol V5
 
-![circleci] [![Latest Version]][crates.io] ![docs]
+[![Latest Version]][crates.io] ![docs]
 
 [Latest Version]: https://img.shields.io/crates/v/airmash-protocol-v5.svg
 [crates.io]: https://crates.io/crates/airmash-protocol-v5
