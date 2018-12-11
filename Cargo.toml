@@ -1,6 +1,6 @@
 [package]
 name = "airmash-protocol-v5"
-version = "0.0.3"
+version = "0.0.4"
 authors = ["STEAMROLLER"]
 readme = "README.md"
 description = "Protocol backend for version 5 of the AIRMASH protocol"
