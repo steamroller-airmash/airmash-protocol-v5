@@ -125,7 +125,7 @@ impl_serde! {
 	}
 
 	struct server::PlayerUpgrade {
-		upgrades: Upgrades,
+		upgrades: u16,
 		ty: UpgradeType,
 		speed: u8,
 		defense: u8,
