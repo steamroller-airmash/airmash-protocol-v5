@@ -4,11 +4,12 @@ use error::*;
 use serde::Serialize;
 
 pub struct Serializer {
-	bytes: Vec<u8>,
+	pub(crate) bytes: Vec<u8>,
 }
 
 impl Serializer {
-	fn new() -> Self {
+	/// Public for tests
+	pub(crate) fn new() -> Self {
 		Self { bytes: vec![] }
 	}
 

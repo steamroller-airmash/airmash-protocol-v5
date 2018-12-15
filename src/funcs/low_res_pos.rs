@@ -22,5 +22,32 @@ pub fn deserialize<'de>(de: &mut Deserializer<'de>) -> Result<Option<Position>, 
 	Ok(Position::new(
 		((x as i32 - 128) * 128) as f32,
 		((y as i32 - 128) * 128) as f32,
-	).into())
+	)
+	.into())
+}
+
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	fn serialize_0_0() {
+		let pos = Position::new(0.0, 0.0);
+		let mut ser = Serializer::new();
+
+		serialize(&Some(pos), &mut ser).unwrap();
+
+		assert!(ser.bytes[0] == 128 && ser.bytes[1] == 128);
+	}
+
+	#[test]
+	fn deserialize_0_0() {
+		let pos = Position::new(0.0, 0.0);
+		let buf = [128, 128];
+		let mut de = Deserializer::new(&buf);
+
+		let out = deserialize(&mut de).unwrap();
+
+		assert!(out == Some(pos));
+	}
 }

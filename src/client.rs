@@ -112,7 +112,8 @@ macro_rules! match_case {
 				field: FieldName::Name(stringify!($ty)),
 				ty: "ClientPacket".into(),
 				})
-		})?).into()
+		})?)
+		.into()
 	};
 }
 
@@ -150,7 +151,7 @@ impl Deserialize for ClientPacket {
 						field: FieldName::Name("<variant-number>"),
 						ty: "ClientPacket".into(),
 					}],
-				})
+				});
 			}
 		})
 	}

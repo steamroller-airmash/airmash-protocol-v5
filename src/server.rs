@@ -492,7 +492,8 @@ macro_rules! match_case {
 				field: FieldName::Name(stringify!($ty)),
 				ty: "ServerPacket".into(),
 				})
-		})?).into()
+		})?)
+		.into()
 	};
 }
 

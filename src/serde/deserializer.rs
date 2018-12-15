@@ -8,7 +8,8 @@ pub struct Deserializer<'de> {
 }
 
 impl<'de> Deserializer<'de> {
-	fn new(bytes: &'de [u8]) -> Self {
+	/// Public for tests
+	pub(crate) fn new(bytes: &'de [u8]) -> Self {
 		Self { bytes }
 	}
 
