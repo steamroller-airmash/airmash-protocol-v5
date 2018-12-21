@@ -260,12 +260,12 @@ impl_serde! {
 
 	struct server::MobDespawn {
 		id: Mob,
-		ty: DespawnMobType
+		ty: DespawnType
 	}
 
 	struct server::MobDespawnCoords {
 		id: Mob,
-		ty: DespawnMobType,
+		ty: MobType,
 		pos: position,
 	}
 

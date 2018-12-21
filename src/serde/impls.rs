@@ -60,7 +60,7 @@ enum_serde_decl! {
 	ServerCustomType: u8,
 	ServerMessageType: u8,
 	UpgradeType: u8,
-	DespawnMobType: u8
+	DespawnType: u8
 }
 
 newtype_serde_decl!(Player);
