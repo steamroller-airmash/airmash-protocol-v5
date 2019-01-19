@@ -8,9 +8,7 @@ keywords = ["protocol", "games"]
 license = "Apache-2.0 OR MIT"
 repository = 'https://github.com/steamroller-airmash/airmash-protocol-v5'
 
-# Need to publish new update to airmash-protocol first
-
 [dependencies.airmash-protocol]
-#version = "0.2"
-git = "https://github.com/steamroller-airmash/airmash-protocol-rs"
+version = "0.3"
+#git = "https://github.com/steamroller-airmash/airmash-protocol-rs"
 default-features = false
