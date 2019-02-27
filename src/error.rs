@@ -1,3 +1,4 @@
+use std::convert::Infallible;
 use std::error::Error;
 use std::fmt::{Display, Error as FmtError, Formatter};
 use std::string::FromUtf8Error;
@@ -64,26 +65,16 @@ impl Display for DeserializeErrorType {
 		use DeserializeErrorType::*;
 
 		match self {
-			UnexpectedEndOfMessage => {
-				write!(
-					fmt,
-					"Reached the end of the buffer before deserialization was complete!"
-				)
-			},
-			Utf8Error(e) => {
-				write!(
-					fmt,
-					"A string contained invalid UTF-8. Inner error: {}",
-					e
-				)
-			},
-			InvalidEnumValue(v) => {
-				write!(
+			UnexpectedEndOfMessage => write!(
+				fmt,
+				"Reached the end of the buffer before deserialization was complete!"
+			),
+			Utf8Error(e) => write!(fmt, "A string contained invalid UTF-8. Inner error: {}", e),
+			InvalidEnumValue(v) => write!(
 					fmt,
 					"Attempted to deserialize an enum with an invalid value. {} does not deserialize to an enum case.",
 					v
-				)
-			}
+				),
 		}
 	}
 }
@@ -157,15 +148,15 @@ impl From<EnumValueOutOfRangeError<u16>> for DeserializeError {
 	}
 }
 
-impl From<!> for DeserializeError {
-	fn from(never: !) -> Self {
-		never
+impl From<Infallible> for DeserializeError {
+	fn from(never: Infallible) -> Self {
+		match never {}
 	}
 }
 
-impl From<!> for SerializeError {
-	fn from(never: !) -> Self {
-		never
+impl From<Infallible> for SerializeError {
+	fn from(never: Infallible) -> Self {
+		match never {}
 	}
 }
 

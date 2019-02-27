@@ -1,5 +1,3 @@
-#![feature(try_from, never_type)]
-
 extern crate airmash_protocol as protocol_common;
 
 #[macro_use]
