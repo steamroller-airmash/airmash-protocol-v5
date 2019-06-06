@@ -112,7 +112,7 @@ impl Display for DeserializeError {
 impl Error for SerializeError {}
 
 impl Error for DeserializeError {
-	fn cause(&self) -> Option<&Error> {
+	fn cause(&self) -> Option<&dyn Error> {
 		use DeserializeErrorType::*;
 		match self.ty {
 			Utf8Error(ref e) => Some(e),

@@ -4,7 +4,7 @@ use serde::{Deserializer, Serializer};
 
 use std::iter::once;
 
-type SerValue = Box<Iterator<Item = Vec<u8>>>;
+type SerValue = Box<dyn Iterator<Item = Vec<u8>>>;
 
 /// Serializer/Deserialize for the airmash protocol version 5.
 #[derive(Copy, Clone, Debug, Default)]
